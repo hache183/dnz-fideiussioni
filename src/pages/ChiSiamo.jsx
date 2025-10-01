@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, Target, Handshake, Map } from 'lucide-react';
+import { Users, Target, HandshakeIcon, Map } from 'lucide-react';
 import SEO from '../components/common/SEO';
 
 const ChiSiamo = () => {
