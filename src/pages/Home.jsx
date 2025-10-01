@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Shield, Building2, ChevronDown, Settings, Handshake, Users, TrendingUp } from 'lucide-react';
+import { Shield, Building2, ChevronDown, Settings, UserCheck, Users, TrendingUp } from 'lucide-react';
 import SEO from '../components/common/SEO';
 import Hero from '../components/sections/Hero';
 import ContactForm from '../components/common/ContactForm';
@@ -122,7 +122,7 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <Handshake className="w-16 h-16 text-blue-600 mx-auto mb-4" />
+            <UserCheck className="w-16 h-16 text-blue-600 mx-auto mb-4" />
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Partner Assicurativi</h2>
             <p className="text-xl text-gray-600">Collaboriamo con oltre 30 compagnie assicurative</p>
           </motion.div>

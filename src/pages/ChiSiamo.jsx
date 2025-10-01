@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, Target, HandshakeIcon, Map } from 'lucide-react';
+import { Users, Target, UserCheck, MapPin } from 'lucide-react';
 import SEO from '../components/common/SEO';
 
 const ChiSiamo = () => {
@@ -16,7 +16,7 @@ const ChiSiamo = () => {
       desc: 'Adottando un approccio consulenziale su misura'
     },
     {
-      icon: <Handshake className="w-6 h-6" />,
+      icon: <UserCheck className="w-6 h-6" />,
       title: 'Un team specializzato in collaborazione con più di 30 compagnie assicurative',
       desc: 'La nostra rete di partner garantisce le migliori soluzioni'
     }
@@ -87,7 +87,6 @@ const ChiSiamo = () => {
         </div>
       </section>
 
-      {/* Presenza sul Territorio */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -96,7 +95,7 @@ const ChiSiamo = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <Map className="w-16 h-16 text-blue-600 mx-auto mb-4" />
+            <MapPin className="w-16 h-16 text-blue-600 mx-auto mb-4" />
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               La Nostra Presenza sul Territorio
             </h2>
@@ -147,4 +146,3 @@ const ChiSiamo = () => {
 };
 
 export default ChiSiamo;
-
