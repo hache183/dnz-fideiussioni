@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import logo from '../../assets/logo_bianco_icona.png'; 
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const dropdownRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -20,6 +22,16 @@ const Header = () => {
     window.scrollTo(0, 0);
   }, [location]);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsServicesOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   const linkClass = scrolled ? 'text-gray-800' : 'text-white';
 
   return (
@@ -30,9 +42,11 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
-              <div className="text-white font-bold text-xl">DNZ</div>
-            </div>
+            <img 
+              src={logo} 
+              alt="DNZ Fideiussioni" 
+              className="h-12 w-auto"
+            />
             <div className={linkClass}>
               <div className="font-bold text-lg">DNZ Fideiussioni</div>
               <div className="text-xs opacity-90">Francesco De Nuzzo</div>
@@ -49,24 +63,27 @@ const Header = () => {
             </Link>
             
             {/* Services Dropdown */}
-            <div className="relative">
+            <div className="relative" ref={dropdownRef}>
               <button
-                onMouseEnter={() => setIsServicesOpen(true)}
-                onMouseLeave={() => setIsServicesOpen(false)}
+                onClick={() => setIsServicesOpen(!isServicesOpen)}
                 className={`font-medium hover:text-blue-500 transition-colors flex items-center ${linkClass}`}
               >
-                Servizi <ChevronDown className="ml-1 w-4 h-4" />
+                Servizi <ChevronDown className={`ml-1 w-4 h-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
               </button>
               {isServicesOpen && (
-                <div
-                  onMouseEnter={() => setIsServicesOpen(true)}
-                  onMouseLeave={() => setIsServicesOpen(false)}
-                  className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl py-2"
-                >
-                  <Link to="/servizi/cauzioni" className="block px-4 py-2 text-gray-800 hover:bg-blue-50 transition-colors">
+                <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl py-2 z-50">
+                  <Link 
+                    to="/servizi/cauzioni" 
+                    onClick={() => setIsServicesOpen(false)}
+                    className="block px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors"
+                  >
                     Cauzioni
                   </Link>
-                  <Link to="/servizi/rischi-tecnologici" className="block px-4 py-2 text-gray-800 hover:bg-blue-50 transition-colors">
+                  <Link 
+                    to="/servizi/rischi-tecnologici" 
+                    onClick={() => setIsServicesOpen(false)}
+                    className="block px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors"
+                  >
                     Rischi Tecnologici
                   </Link>
                 </div>
