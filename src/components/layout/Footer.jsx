@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail } from 'lucide-react';
+import { Phone, Mail, Linkedin } from 'lucide-react';
 import { COMPANY_INFO } from '../../utils/constants';
 
 const Footer = () => {
@@ -27,6 +27,17 @@ const Footer = () => {
               <div className="flex items-center space-x-2">
                 <Mail size={16} />
                 <span className="text-xs">{COMPANY_INFO.pec}</span>
+              </div>
+                            <div className="flex items-center space-x-2 mt-4">
+                <Linkedin size={16} />
+                <a 
+                  href="https://www.linkedin.com/company/dnz-fideiussioni" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-200 hover:text-white hover:underline transition-colors"
+                >
+                  LinkedIn
+                </a>
               </div>
             </div>
           </div>

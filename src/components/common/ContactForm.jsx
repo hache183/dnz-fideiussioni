@@ -2,9 +2,10 @@ import React, { useState, memo } from 'react';
 import { Send } from 'lucide-react';
 import { submitContactForm } from '../../utils/formHandler';
 import { trackFormSubmit } from '../../utils/useAnalytics';
+import { SERVIZI_FORM } from '../../utils/constants';
 
 const ContactForm = memo(({ className = '' }) => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', service:'', message: '' });
   const [formStatus, setFormStatus] = useState('');
   const [errors, setErrors] = useState({});
 
@@ -14,7 +15,11 @@ const ContactForm = memo(({ className = '' }) => {
     if (!formData.name.trim()) {
       newErrors.name = 'Il nome è obbligatorio';
     }
-    
+
+    if (!formData.service || formData.service === 'Seleziona un servizio') {
+      newErrors.service = 'Seleziona un servizio';
+     }
+
     if (!formData.email.trim()) {
       newErrors.email = "L'email è obbligatoria";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
@@ -126,6 +131,39 @@ const ContactForm = memo(({ className = '' }) => {
             )}
           </div>
           
+                    {/* Service Field - NUOVO */}
+          <div>
+            <label 
+              htmlFor="contact-service" 
+              className="block text-gray-700 font-semibold mb-2"
+            >
+              Servizio di Interesse *
+            </label>
+            <select
+              id="contact-service"
+              required
+              value={formData.service}
+              onChange={(e) => handleChange('service', e.target.value)}
+              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
+                errors.service ? 'border-red-500 bg-red-50' : 'border-gray-300'
+              }`}
+              aria-invalid={errors.service ? 'true' : 'false'}
+              aria-describedby={errors.service ? 'service-error' : undefined}
+              disabled={formStatus === 'sending'}
+            >
+              {SERVIZI_FORM.map((servizio, idx) => (
+                <option key={idx} value={servizio} disabled={idx === 0}>
+                  {servizio}
+                </option>
+              ))}
+            </select>
+            {errors.service && (
+              <p id="service-error" className="mt-1 text-sm text-red-600" role="alert">
+                {errors.service}
+              </p>
+            )}
+          </div>
+
           {/* Message Field */}
           <div>
             <label 

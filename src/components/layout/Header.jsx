@@ -71,15 +71,13 @@ const Header = () => {
     }
   }, [isMenuOpen]);
 
-  const linkClass = scrolled ? 'text-gray-800' : 'text-white';
+  const linkClass = 'text-white';
   
   const isActive = (path) => location.pathname === path;
 
   return (
     <header 
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white shadow-lg' : 'bg-gradient-to-r from-blue-900 to-blue-700'
-      }`}
+      className={`fixed w-full z-50 transition-all duration-300 bg-gradient-to-r from-blue-900 to-blue-700 shadow-lg`}
       role="banner"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

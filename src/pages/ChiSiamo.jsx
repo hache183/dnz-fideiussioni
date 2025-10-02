@@ -102,7 +102,7 @@ const ChiSiamo = () => {
               La Nostra Presenza sul Territorio
             </h2>
             <p className="text-xl text-gray-600">
-              Collaboratori, studi di consulenza, segnalatori e sub-agenzie in tutta Italia
+              Collaboratori, studi di consulenza e segnalatori in tutta Italia
             </p>
           </motion.div>
 

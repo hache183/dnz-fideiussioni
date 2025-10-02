@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Shield, Building2, ChevronDown, Settings, UserCheck, Users, TrendingUp } from 'lucide-react';
+import { Shield, Building2, ChevronDown, Settings, UserCheck, Users, TrendingUp, Search, Lightbulb, CheckCircle, Headphones } from 'lucide-react';
 import SEO from '../components/common/SEO';
 import Hero from '../components/sections/Hero';
 import ContactForm from '../components/common/ContactForm';
@@ -93,7 +93,17 @@ const Home = () => {
           </motion.div>
 
           <div className="grid md:grid-cols-5 gap-6">
-            {ITER_STEPS.map((step, idx) => (
+          {ITER_STEPS.map((step, idx) => {
+         // Map icon names to components
+         const IconComponent = {
+           Search,
+          Shield,
+          Lightbulb,
+          CheckCircle,
+          Headphones
+          }[step.icon];
+
+              return (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 30 }}
@@ -102,13 +112,14 @@ const Home = () => {
                 transition={{ delay: idx * 0.1 }}
                 className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all"
               >
-                <div className="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl mb-4 mx-auto">
-                  {step.num}
+                <div className="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
+                  <IconComponent className="w-8 h-8" />
                 </div>
                 <h4 className="font-bold text-gray-900 mb-2 text-center">{step.title}</h4>
                 <p className="text-sm text-gray-600 text-center">{step.desc}</p>
               </motion.div>
-            ))}
+              );
+              })}
           </div>
         </div>
       </section>
@@ -134,7 +145,7 @@ const Home = () => {
             className="bg-blue-50 p-8 rounded-xl"
           >
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 text-center">
-              {PARTNERS.slice(0, 12).map((partner, idx) => (
+              {PARTNERS.map((partner, idx) => (
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, scale: 0.8 }}
