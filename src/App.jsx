@@ -13,6 +13,7 @@ const RischiTecnologici = lazy(() => import('./pages/RischiTecnologici'));
 const AltreGaranzie = lazy(() => import('./pages/AltreGaranzie'));
 const Contatti = lazy(() => import('./pages/Contatti'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const ProceduraReclami = lazy(() => import('./pages/ProceduraReclami'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 function App() {

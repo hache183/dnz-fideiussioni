@@ -15,7 +15,7 @@ const Home = () => {
       />
 
       <Hero
-        title="La sicurezza del tuo business in mani esperte"
+        title="Con noi, la sicurezza del tuo business è in buone mani"
         subtitle="Specialisti in fideiussioni e rischi tecnologici"
         ctaText="Richiedi un Preventivo"
         ctaLink="/contatti"

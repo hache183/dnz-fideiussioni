@@ -72,13 +72,22 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-blue-700 mt-8 pt-8 text-center text-blue-200 text-sm">
-          <p className="mb-2">&copy; 2025 {COMPANY_INFO.name} - {COMPANY_INFO.fullName}. Tutti i diritti riservati.</p>
-          <Link 
-            to="/privacy-policy" 
-            className="text-blue-200 hover:text-white hover:underline transition-colors"
-          >
-            Privacy Policy
-          </Link>
+          <p className="mb-3">&copy; 2025 {COMPANY_INFO.name} - {COMPANY_INFO.fullName}. Tutti i diritti riservati.</p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link 
+              to="/privacy-policy" 
+              className="text-blue-200 hover:text-white hover:underline transition-colors"
+            >
+              Privacy Policy
+            </Link>
+            <span className="text-blue-400">•</span>
+            <Link 
+              to="/procedura-reclami" 
+              className="text-blue-200 hover:text-white hover:underline transition-colors"
+            >
+              Procedura Reclami
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
