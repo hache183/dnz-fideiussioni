@@ -33,7 +33,6 @@ const Header = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Keyboard navigation for dropdown
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === 'Escape') {
@@ -45,7 +44,6 @@ const Header = () => {
     return () => document.removeEventListener('keydown', handleEscape);
   }, []);
 
-  // Focus trap for mobile menu
   useEffect(() => {
     if (isMenuOpen && mobileMenuRef.current) {
       const focusableElements = mobileMenuRef.current.querySelectorAll(
@@ -72,7 +70,6 @@ const Header = () => {
   }, [isMenuOpen]);
 
   const linkClass = 'text-white';
-  
   const isActive = (path) => location.pathname === path;
 
   return (
@@ -82,7 +79,6 @@ const Header = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          {/* Logo */}
           <Link 
             to="/" 
             className="flex items-center space-x-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded"
@@ -100,7 +96,6 @@ const Header = () => {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8" role="navigation" aria-label="Navigazione principale">
             <Link 
               to="/" 
@@ -117,7 +112,6 @@ const Header = () => {
               Chi Siamo
             </Link>
             
-            {/* Services Dropdown */}
             <div className="relative" ref={dropdownRef}>
               <button
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
@@ -156,6 +150,14 @@ const Header = () => {
                   >
                     Rischi Tecnologici
                   </Link>
+                  <Link 
+                    to="/servizi/altre-garanzie" 
+                    onClick={() => setIsServicesOpen(false)}
+                    className="block px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors focus:outline-none focus:bg-blue-50"
+                    role="menuitem"
+                  >
+                    Altre Garanzie
+                  </Link>
                 </div>
               )}
             </div>
@@ -169,7 +171,6 @@ const Header = () => {
             </Link>
           </nav>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className={`md:hidden focus:outline-none focus:ring-2 focus:ring-blue-500 rounded p-2 ${linkClass}`}
@@ -181,7 +182,6 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isMenuOpen && (
         <div 
           ref={mobileMenuRef}
@@ -217,6 +217,12 @@ const Header = () => {
                 className="block py-2 pl-4 text-gray-600 hover:text-blue-600 focus:outline-none focus:text-blue-600"
               >
                 Rischi Tecnologici
+              </Link>
+              <Link 
+                to="/servizi/altre-garanzie" 
+                className="block py-2 pl-4 text-gray-600 hover:text-blue-600 focus:outline-none focus:text-blue-600"
+              >
+                Altre Garanzie
               </Link>
             </div>
             <Link 

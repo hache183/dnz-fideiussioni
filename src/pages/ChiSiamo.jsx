@@ -54,8 +54,8 @@ const ChiSiamo = () => {
                 Professionisti assicurativi specializzati nella gestione di grandi rischi
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Con più di 20 anni di presenza sul territorio grazie all'attività familiare precedente, 
-                DNZ Fideiussioni si è affermata come punto di riferimento nel settore assicurativo.
+                DNZ Fideiussioni si è affermata come punto di riferimento nel settore assicurativo, 
+                offrendo consulenza specializzata e soluzioni su misura per aziende e professionisti.
               </p>
             </motion.div>
 

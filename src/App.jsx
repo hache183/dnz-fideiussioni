@@ -10,6 +10,7 @@ const Home = lazy(() => import('./pages/Home'));
 const ChiSiamo = lazy(() => import('./pages/ChiSiamo'));
 const Cauzioni = lazy(() => import('./pages/Cauzioni'));
 const RischiTecnologici = lazy(() => import('./pages/RischiTecnologici'));
+const AltreGaranzie = lazy(() => import('./pages/AltreGaranzie'));
 const Contatti = lazy(() => import('./pages/Contatti'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
@@ -25,6 +26,7 @@ function App() {
                 <Route path="/chi-siamo" element={<ChiSiamo />} />
                 <Route path="/servizi/cauzioni" element={<Cauzioni />} />
                 <Route path="/servizi/rischi-tecnologici" element={<RischiTecnologici />} />
+                <Route path="/servizi/altre-garanzie" element={<AltreGaranzie />} />
                 <Route path="/contatti" element={<Contatti />} />
                 {/* 404 Route */}
                 <Route path="*" element={<Home />} />

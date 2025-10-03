@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Shield, Building2, ChevronDown, Settings, UserCheck, Users, TrendingUp, Search, Lightbulb, CheckCircle, Headphones } from 'lucide-react';
+import { Shield, Building2, FileCheck, ChevronDown, Settings, UserCheck, Users, TrendingUp, Search, Lightbulb, CheckCircle, Headphones } from 'lucide-react';
 import SEO from '../components/common/SEO';
 import Hero from '../components/sections/Hero';
 import ContactForm from '../components/common/ContactForm';
-import { ITER_STEPS, PARTNERS, CLIENT_TYPES } from '../utils/constants';
+import { ITER_STEPS, CLIENT_TYPES } from '../utils/constants';
 
 const Home = () => {
   return (
@@ -34,7 +34,7 @@ const Home = () => {
             <p className="text-xl text-gray-600">Soluzioni assicurative su misura per ogni esigenza</p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -56,9 +56,10 @@ const Home = () => {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
               className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all"
             >
               <Building2 className="w-12 h-12 text-blue-600 mb-4" />
@@ -69,6 +70,27 @@ const Home = () => {
               </p>
               <Link
                 to="/servizi/rischi-tecnologici"
+                className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700"
+              >
+                Scopri di più <ChevronDown className="ml-2 rotate-[-90deg]" size={20} />
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all"
+            >
+              <FileCheck className="w-12 h-12 text-blue-600 mb-4" />
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Altre Garanzie</h3>
+              <p className="text-gray-700 mb-4">
+                Polizze RCT/RCO, incendio e furto aziendale, donazioni, successioni, 
+                CVT e temporanee casi morte.
+              </p>
+              <Link
+                to="/servizi/altre-garanzie"
                 className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700"
               >
                 Scopri di più <ChevronDown className="ml-2 rotate-[-90deg]" size={20} />
@@ -124,40 +146,18 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Partner */}
+      {/* Partner - Solo titolo */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center"
           >
             <UserCheck className="w-16 h-16 text-blue-600 mx-auto mb-4" />
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Partner Assicurativi</h2>
             <p className="text-xl text-gray-600">Collaboriamo con oltre 30 compagnie assicurative</p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="bg-blue-50 p-8 rounded-xl"
-          >
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 text-center">
-              {PARTNERS.map((partner, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.05 }}
-                  className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-all"
-                >
-                  <p className="text-sm font-semibold text-gray-700">{partner}</p>
-                </motion.div>
-              ))}
-            </div>
           </motion.div>
         </div>
       </section>
@@ -205,10 +205,10 @@ const Home = () => {
             <TrendingUp className="w-16 h-16 mx-auto mb-6" />
             <h2 className="text-3xl md:text-4xl font-bold mb-6">MUST</h2>
             <p className="text-xl md:text-2xl text-blue-100 mb-4 max-w-4xl mx-auto">
-              Da più di dieci anni, lavoriamo con impegno e integrità per mantenere la fiducia di clienti e partner.
+              Lavoriamo con impegno e integrità per mantenere la fiducia di clienti e partner.
             </p>
             <p className="text-lg text-blue-200 max-w-4xl mx-auto">
-              La nostra velocità operativa e la gamma di compagnie assicurative e accordi costituiscono 
+              La nostra velocità operativa e la gamma di accordi costituiscono 
               i nostri principali punti di forza.
             </p>
           </motion.div>

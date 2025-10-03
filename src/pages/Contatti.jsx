@@ -21,7 +21,6 @@ const Contatti = () => {
             className="text-center"
           >
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Contatti</h1>
-            <p className="text-xl text-blue-200 italic">"{COMPANY_INFO.motto}"</p>
           </motion.div>
         </div>
       </div>
@@ -83,12 +82,6 @@ const Contatti = () => {
                     <p className="text-gray-600">Iscrizione IVASS E RUI: {COMPANY_INFO.rui}</p>
                   </div>
                 </div>
-              </div>
-
-              <div className="mt-8 p-6 bg-blue-50 rounded-xl">
-                <h3 className="font-bold text-gray-900 mb-2">Orari di Lavoro</h3>
-                <p className="text-gray-600">Lunedì - Venerdì: 9:00 - 18:00</p>
-                <p className="text-gray-600">Sabato - Domenica: Chiuso</p>
               </div>
             </motion.div>
 
