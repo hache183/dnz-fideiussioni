@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-// Sostituisci con il tuo GA4 Measurement ID
-const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // TODO: Inserire il proprio ID
+// Google Analytics 4 Measurement ID
+const GA_MEASUREMENT_ID = 'G-XN4BXFV8VW';
 
 export const useAnalytics = () => {
   const location = useLocation();

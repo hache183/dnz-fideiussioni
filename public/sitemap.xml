@@ -52,4 +52,12 @@
     <priority>0.7</priority>
   </url>
   
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://dnzfideiussioni.eu/privacy-policy</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
 </urlset>

@@ -12,6 +12,7 @@ const Cauzioni = lazy(() => import('./pages/Cauzioni'));
 const RischiTecnologici = lazy(() => import('./pages/RischiTecnologici'));
 const AltreGaranzie = lazy(() => import('./pages/AltreGaranzie'));
 const Contatti = lazy(() => import('./pages/Contatti'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
                 <Route path="/servizi/rischi-tecnologici" element={<RischiTecnologici />} />
                 <Route path="/servizi/altre-garanzie" element={<AltreGaranzie />} />
                 <Route path="/contatti" element={<Contatti />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                 {/* 404 Route */}
                 <Route path="*" element={<Home />} />
               </Routes>

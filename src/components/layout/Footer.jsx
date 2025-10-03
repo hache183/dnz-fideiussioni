@@ -1,5 +1,6 @@
 import React from 'react';
-import { Phone, Mail, Linkedin, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Phone, Mail, ExternalLink } from 'lucide-react';
 import { COMPANY_INFO } from '../../utils/constants';
 import logo from '../../assets/logo_bianco_icona.png';
 
@@ -39,17 +40,6 @@ const Footer = () => {
                 <Mail size={16} />
                 <span className="text-xs">{COMPANY_INFO.pec}</span>
               </div>
-              <div className="flex items-center space-x-2 mt-4">
-                <Linkedin size={16} />
-                <a 
-                  href="https://www.linkedin.com/company/dnz-fideiussioni" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-blue-200 hover:text-white hover:underline transition-colors"
-                >
-                  LinkedIn
-                </a>
-              </div>
             </div>
           </div>
           
@@ -82,7 +72,13 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-blue-700 mt-8 pt-8 text-center text-blue-200 text-sm">
-          <p>&copy; 2025 {COMPANY_INFO.name} - {COMPANY_INFO.fullName}. Tutti i diritti riservati.</p>
+          <p className="mb-2">&copy; 2025 {COMPANY_INFO.name} - {COMPANY_INFO.fullName}. Tutti i diritti riservati.</p>
+          <Link 
+            to="/privacy-policy" 
+            className="text-blue-200 hover:text-white hover:underline transition-colors"
+          >
+            Privacy Policy
+          </Link>
         </div>
       </div>
     </footer>
