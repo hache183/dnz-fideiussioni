@@ -31,6 +31,7 @@ function App() {
                 <Route path="/servizi/altre-garanzie" element={<AltreGaranzie />} />
                 <Route path="/contatti" element={<Contatti />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="/procedura-reclami" element={<ProceduraReclami />} />
                 {/* 404 Route */}
                 <Route path="*" element={<Home />} />
               </Routes>

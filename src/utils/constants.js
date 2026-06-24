@@ -4,7 +4,7 @@ export const COMPANY_INFO = {
   phone: '3497950278',
   email: 'cauzioni@francescodenuzzo.it',
   pec: 'francescodenuzzo@legalmail.it',
-  piva: '02693177444',
+  piva: '02693170744',
   cf: 'DNZFNC95S17A048U',
   rui: '000705526',
   rea: '164678',

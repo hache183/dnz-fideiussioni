@@ -66,6 +66,9 @@ const Footer = () => {
                   <span>Verifica iscrizione RUI</span>
                   <ExternalLink size={12} />
                 </a>
+                <p className="mt-2 text-xs text-blue-200">
+                  Intermediario assicurativo iscritto al RUI n. E 000705526 e soggetto alla vigilanza dell'IVASS
+                </p>
               </div>
             </div>
           </div>
